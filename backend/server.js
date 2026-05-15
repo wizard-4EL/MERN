@@ -1,13 +1,18 @@
 require('dotenv').config()
 
 const express = require('express')
+const cors = require('cors')
 const mongoose = require('mongoose')
 const workoutRoutes = require('./routes/workouts')
 
 const app = express()
 
+
 // middleware first
 app.use(express.json())
+app.use(cors({
+   origin: 'https://mern-frontend-tzvu.vercel.app'
+})) 
 
 app.use((req, res, next) => {
   console.log(req.path, req.method)
