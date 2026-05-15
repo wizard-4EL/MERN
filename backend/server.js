@@ -11,7 +11,7 @@ const app = express()
 // middleware first
 app.use(express.json())
 app.use(cors({
-   origin: 'https://mern-frontend-tzvu.vercel.app'
+   origin: ['https://mern-frontend-tzvu.vercel.app', 'http://localhost:3000']
 })) 
 
 app.use((req, res, next) => {
